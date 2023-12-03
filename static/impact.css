@@ -1,0 +1,51 @@
+.gymlist-table {
+	font-family: "Poppins", sans-serif;
+ }
+
+.gymlist-table thead tr {
+	text-align: left;
+ }
+
+.gymlist-table th {
+	background: #202e38;
+	color:white
+}
+
+.gymlist-table tr td {
+    padding: 1px 3px;
+    text-align: left;    
+    font-family: "Arial", sans-serif;		    
+}
+
+.gymlist-table tbody tr {
+	background: #e4e7e9;
+	border-bottom: 2px solid #dddddd;
+	text-align: left;
+ }
+
+ tbody tr:hover {
+	background-color: yellow;
+   }
+
+.gymlist-table tbody tr.active-row {
+	font-weight: bold;
+	color: #009879;
+ }
+
+.gymlist-table #region {
+	text-align: center;
+ }
+
+ .gymlist-table #mens {
+	text-align: center;
+ }
+
+ .gymlist-table #womens {
+	text-align: center;
+ }
+
+ .gymlist-table caption {
+	text-align: left;
+	font-family: "Segoe UI", sans-serif;
+	font-weight: bold;
+ }

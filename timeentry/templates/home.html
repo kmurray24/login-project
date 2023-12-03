@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+
+{% block title %}Time Entry{% endblock title %}
+
+{% block content %}
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-8">
+				<h3>Options</h3>
+				<ul>
+					<li>	<button type="button" role="button" class="btn-primary btn-sm col-2"> 
+							<a href="{% url 'home' %}">Time Entry</a>
+						</button>
+					</li>
+					<br>
+					<li>	<button type="button" role="button" class=" btn-primary btn-sm col-2"> 
+							<a href="{% url 'home' %}">Time Entry</a>
+						</button>
+					</li>
+					<br>
+					<li>	<button type="button" role="button" class="btn-primary btn-sm col-2">
+							<a href="{% url 'home' %}">Message Admin</a>
+						</button>
+					</li>
+					<br>
+					<li>	<button type="button" role="button" class="btn-primary btn-sm col-2">
+							<a href="{% url 'admin:logout' %}">Logoff</a> 
+						</button>
+					</li>
+				</ul>
+				</div>
+					<div class="col-md-4 themed-grid-col">
+						<h5>Claim Details</h5>
+						<table class="table table-sm">
+							<thead>
+								<tr>
+									<td>Expert  </td>
+									<td>Case    </td>
+									<td>Period  </td>
+									<td>Status  </td> 
+									<td class="text-end">Hours   </td>
+									<td class="text-end">Expenses</td>
+								</tr>
+							</thead>
+
+							{% for item in claim_summary %}
+								<tr>
+									<td>{{ claim_summary|get_value:item.firstname }} </td>
+									<td>{{ item.case }}   </td>
+									<td>{{ item.period }} </td>
+									<td>{{ item.status }} </td>
+									<td class="text-end">{{ item.total_hours|floatformat:2 }}   </td>
+									<td class="text-end">{{ item.total_expense|floatformat:2 }} </td>
+								</tr>
+							{% endfor %} 
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+{% endblock content %}

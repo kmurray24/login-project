@@ -1,0 +1,15 @@
+<!-- FILEPATH: /c:/Users/Ken Murray/devprojects/django/login-project/templates/home.html -->
+{% extends "base.html" %}
+{% block content %}
+     {% if user.is_authenticated %}
+          <p>Welcome to index.html, {{ user.username }}!</p>
+          <p>You are logged in</p>
+          <input type="button" class="btn btn-info" value="Logout"
+                 onclick="location.href='{% url 'logout' %}';">
+     {% else %}
+          <p>Welcome to index.html, {{ user.username }}!</p>
+          <p>You are not logged in</p>
+          <input type="button" class="btn btn-info" value="Login"
+                 onclick="location.href='{% url 'login' %}';">
+     {% endif %}
+{% endblock content %}
